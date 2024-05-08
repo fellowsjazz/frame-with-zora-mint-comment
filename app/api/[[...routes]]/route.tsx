@@ -43,17 +43,45 @@ app.frame("/", (c) => {
   const { buttonValue, inputText, status } = c;
   const fruit = inputText || buttonValue;
   return c.res({
+    action: "/mintSuccess",
     image:
-      "https://magic.decentralized-content.com/ipfs/bafkreig6tezfpz2byeeujnmxfdqfopcrn6cjqwesacxz767comiodkvlgi",
+      // "https://magic.decentralized-content.com/ipfs/bafkreig6tezfpz2byeeujnmxfdqfopcrn6cjqwesacxz767comiodkvlgi", tender
+      // "https://magic.decentralized-content.com/ipfs/bafybeigk3nqaf3rrhsgr4e2pa5xhtz4j22l3bcz6xhkkdepf3mtlgtymli", // elouise
+      // "https://drop-page.vercel.app/songcampAlumni.png",
+      status == "response"
+        ? "https://drop-page.vercel.app/songcampAlumni.png"
+        : "https://drop-page.vercel.app/outNow.png",
 
     intents: [
       <Button.Transaction target="/mint">Mint</Button.Transaction>,
       <TextInput placeholder="Leave a comment..." />,
-      <Button.Link href="https://song.camp/collection/0x014343327550ad974dccd6b3de77611b4fc7967b?tokenId=1">
+      <Button.Link href="https://song.camp/collection/0xa7f7368d3f27515844abacd452252a4bcf824317?tokenId=2">
         Listen on song.camp
       </Button.Link>,
+      <Button value="test">test</Button>,
+    ],
+  });
+});
 
-      status === "response" && <Button.Reset>Reset</Button.Reset>,
+app.frame("/mintSuccess", (c) => {
+  const { buttonValue, inputText, status } = c;
+
+  return c.res({
+    image:
+      // "https://magic.decentralized-content.com/ipfs/bafkreig6tezfpz2byeeujnmxfdqfopcrn6cjqwesacxz767comiodkvlgi", tender
+      // "https://magic.decentralized-content.com/ipfs/bafybeigk3nqaf3rrhsgr4e2pa5xhtz4j22l3bcz6xhkkdepf3mtlgtymli", // elouise
+      // "https://drop-page.vercel.app/songcampAlumni.png",
+      status == "response"
+        ? "https://drop-page.vercel.app/songcampAlumni.png"
+        : "https://drop-page.vercel.app/outNow.png",
+
+    intents: [
+      <Button.Link href="https://song.camp/collection/0xa7f7368d3f27515844abacd452252a4bcf824317?tokenId=2">
+        Listen on song.camp
+      </Button.Link>,
+      <Button.Link href="https://65y914vyymr.typeform.com/to/t3bxerKY?typeform-source=song.camp">
+        Release with Songcamp
+      </Button.Link>,
     ],
   });
 });
