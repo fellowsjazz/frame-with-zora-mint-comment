@@ -15,6 +15,7 @@ const app = new Frog({
   basePath: "/api",
   // Supply a Hub to enable frame verification.
   // hub: neynar({ apiKey: 'NEYNAR_FROG_FM' })
+  imageAspectRatio: "1:1",
 });
 
 // Uncomment to use Edge Runtime
@@ -42,46 +43,15 @@ app.frame("/", (c) => {
   const { buttonValue, inputText, status } = c;
   const fruit = inputText || buttonValue;
   return c.res({
-    image: (
-      <div
-        style={{
-          alignItems: "center",
-          background:
-            status === "response"
-              ? "linear-gradient(to right, #432889, #17101F)"
-              : "black",
-          backgroundSize: "100% 100%",
-          display: "flex",
-          flexDirection: "column",
-          flexWrap: "nowrap",
-          height: "100%",
-          justifyContent: "center",
-          textAlign: "center",
-          width: "100%",
-        }}
-      >
-        <div
-          style={{
-            color: "white",
-            fontSize: 60,
-            fontStyle: "normal",
-            letterSpacing: "-0.025em",
-            lineHeight: 1.4,
-            marginTop: 30,
-            padding: "0 120px",
-            whiteSpace: "pre-wrap",
-          }}
-        >
-          {status === "response"
-            ? `Nice choice.${fruit ? ` ${fruit.toUpperCase()}!!` : ""}`
-            : "Welcome!"}
-        </div>
-      </div>
-    ),
+    image:
+      "https://magic.decentralized-content.com/ipfs/bafkreig6tezfpz2byeeujnmxfdqfopcrn6cjqwesacxz767comiodkvlgi",
+
     intents: [
       <Button.Transaction target="/mint">Mint</Button.Transaction>,
       <TextInput placeholder="Leave a comment..." />,
-      <Button.Link href="https://song.camp">Listen on song.camp</Button.Link>,
+      <Button.Link href="https://song.camp/collection/0x014343327550ad974dccd6b3de77611b4fc7967b?tokenId=1">
+        Listen on song.camp
+      </Button.Link>,
 
       status === "response" && <Button.Reset>Reset</Button.Reset>,
     ],
