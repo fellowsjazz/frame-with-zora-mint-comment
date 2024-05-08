@@ -43,7 +43,7 @@ app.frame("/", (c) => {
   const { buttonValue, inputText, status } = c;
   const fruit = inputText || buttonValue;
   return c.res({
-    action: "/mintSuccess",
+    action: "/mintsuccess",
     image:
       // "https://magic.decentralized-content.com/ipfs/bafkreig6tezfpz2byeeujnmxfdqfopcrn6cjqwesacxz767comiodkvlgi", tender
       // "https://magic.decentralized-content.com/ipfs/bafybeigk3nqaf3rrhsgr4e2pa5xhtz4j22l3bcz6xhkkdepf3mtlgtymli", // elouise
@@ -61,13 +61,14 @@ app.frame("/", (c) => {
   });
 });
 
-app.frame("/mintSuccess", (c) => {
+app.frame("/mintsuccess", (c) => {
   const { buttonValue, inputText, status } = c;
 
   return c.res({
     image:
       // "https://magic.decentralized-content.com/ipfs/bafkreig6tezfpz2byeeujnmxfdqfopcrn6cjqwesacxz767comiodkvlgi", tender
       // "https://magic.decentralized-content.com/ipfs/bafybeigk3nqaf3rrhsgr4e2pa5xhtz4j22l3bcz6xhkkdepf3mtlgtymli", // elouise
+      // "https://drop-page.vercel.app/songcampAlumni.png",
       // "https://drop-page.vercel.app/songcampAlumni.png",
       "https://drop-page.vercel.app/songcampAlumni.png",
 
