@@ -52,7 +52,7 @@ app.frame("/", (c) => {
 
     intents: [
       <Button.Transaction target="/mint">Mint</Button.Transaction>,
-      <TextInput placeholder="Leave a comment (or tip $enjoy)..." />,
+      <TextInput placeholder="Comment & tip $enjoy" />,
       <Button.Link href="https://song.camp/collection/0xa7f7368d3f27515844abacd452252a4bcf824317?tokenId=2">
         Listen
       </Button.Link>,
