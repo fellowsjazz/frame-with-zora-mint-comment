@@ -61,9 +61,11 @@ app.frame("/", (c) => {
   });
 });
 
+
+
 app.frame("/mintsuccess", (c) => {
   const { buttonValue, inputText, status } = c;
-
+const dummy = 'dummy'
   return c.res({
     image:
       // "https://magic.decentralized-content.com/ipfs/bafkreig6tezfpz2byeeujnmxfdqfopcrn6cjqwesacxz767comiodkvlgi", tender
