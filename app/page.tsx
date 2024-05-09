@@ -1,35 +1,39 @@
-import { getFrameMetadata } from 'frog/next'
-import type { Metadata } from 'next'
-import Image from 'next/image'
+import { getFrameMetadata } from "frog/next";
+import type { Metadata } from "next";
+import Image from "next/image";
+import { useRouter } from "next/router";
+import { redirect } from "next/navigation";
 
-import styles from './page.module.css'
+import styles from "./page.module.css";
+import { useEffect } from "react";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const frameTags = await getFrameMetadata(
-    `${process.env.VERCEL_URL || 'http://localhost:3000'}/api`,
-  )
-  return {
-    other: frameTags,
-  }
-}
+// export async function generateMetadata(): Promise<Metadata> {
+//   const frameTags = await getFrameMetadata(
+//     `https://frame-with-zora-mint-comment.vercel.app/api`
+//   );
+//   return {
+//     other: frameTags,
+//   };
+// }
 
 export default function Home() {
+  redirect("https://song.camp/");
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
           <p>
             Get started by editing&nbsp;
             <code className={styles.code}>app/page.tsx</code>
           </p>
           <p>
-            Head to{' '}
+            Head to{" "}
             <a
               href="/api/dev"
-              style={{ display: 'inline', fontWeight: 'semibold' }}
+              style={{ display: "inline", fontWeight: "semibold" }}
             >
               <code className={styles.code}>localhost:3000/api</code>
-            </a>{' '}
+            </a>{" "}
             for your frame endpoint.
           </p>
         </div>
@@ -39,7 +43,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{' '}
+            By{" "}
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
@@ -115,5 +119,5 @@ export default function Home() {
         </a>
       </div>
     </main>
-  )
+  );
 }

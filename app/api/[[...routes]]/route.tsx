@@ -13,9 +13,9 @@ const abi = zora1155;
 const app = new Frog({
   assetsPath: "/",
   basePath: "/api",
+  browserLocation: 'https://song.camp/'
   // Supply a Hub to enable frame verification.
   // hub: neynar({ apiKey: 'NEYNAR_FROG_FM' })
-  imageAspectRatio: "1:1",
 });
 
 // Uncomment to use Edge Runtime
@@ -48,15 +48,15 @@ app.frame("/", (c) => {
       // "https://magic.decentralized-content.com/ipfs/bafkreig6tezfpz2byeeujnmxfdqfopcrn6cjqwesacxz767comiodkvlgi", tender
       // "https://magic.decentralized-content.com/ipfs/bafybeigk3nqaf3rrhsgr4e2pa5xhtz4j22l3bcz6xhkkdepf3mtlgtymli", // elouise
       // "https://drop-page.vercel.app/songcampAlumni.png",
-      "https://drop-page.vercel.app/outNow.png",
+      "/initial.jpg",
 
     intents: [
       <Button.Transaction target="/mint">Mint</Button.Transaction>,
-      <TextInput placeholder="Comment & tip $enjoy" />,
+      <TextInput placeholder="Comment and tip $enjoy" />,
       <Button.Link href="https://song.camp/collection/0xa7f7368d3f27515844abacd452252a4bcf824317?tokenId=2">
         Listen
       </Button.Link>,
-      <Button value="test">test success</Button>,
+      // <Button value="test">test success</Button>,
     ],
   });
 });
@@ -71,7 +71,7 @@ app.frame("/mintsuccess", (c) => {
       // "https://drop-page.vercel.app/songcampAlumni.png",
       // "https://drop-page.vercel.app/songcampAlumni.png",
       // "https://drop-page.vercel.app/songcampAlumni.png",
-      "https://drop-page.vercel.app/outNow.png",
+      "/submitted.jpg",
 
     intents: [
       <Button.Link href="https://song.camp/collection/0xa7f7368d3f27515844abacd452252a4bcf824317?tokenId=2">
@@ -100,11 +100,11 @@ app.transaction("/mint", (c) => {
     to: "0x014343327550ad974dccd6b3de77611b4fc7967b", //tender
     args: [
       "0x04E2516A2c207E84a1839755675dfd8eF6302F0a",
-      1,
+      2,
       1,
       encodedArguments,
       // `0x000000000000000000000000${truncatedAddress}00000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000`,
-      "0xF6019eA4Bfe5A45520940f3A6D98731eD7ae963c",
+      "0xa7f7368d3f27515844abacd452252a4bcf824317",
     ],
     value: parseEther("0.000777", "wei"),
   });
