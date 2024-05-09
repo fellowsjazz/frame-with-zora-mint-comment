@@ -7,17 +7,18 @@ import { redirect } from "next/navigation";
 import styles from "./page.module.css";
 import { useEffect } from "react";
 
-// export async function generateMetadata(): Promise<Metadata> {
-//   const frameTags = await getFrameMetadata(
-//     `https://frame-with-zora-mint-comment.vercel.app/api`
-//   );
-//   return {
-//     other: frameTags,
-//   };
-// }
+export async function generateMetadata(): Promise<Metadata> {
+  const frameTags = await getFrameMetadata(
+    `https://frame-with-zora-mint-comment.vercel.app/api`
+  );
+  return {
+    other: frameTags,
+  };
+  
+}
 
 export default function Home() {
-  redirect("https://song.camp/");
+  
   return (
     <main className={styles.main}>
       <div className={styles.description}>

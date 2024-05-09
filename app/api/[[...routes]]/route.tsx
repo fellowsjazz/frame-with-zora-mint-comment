@@ -13,7 +13,7 @@ const abi = zora1155;
 const app = new Frog({
   assetsPath: "/",
   basePath: "/api",
-  browserLocation: 'https://song.camp/'
+  browserLocation: "https://song.camp/",
   // Supply a Hub to enable frame verification.
   // hub: neynar({ apiKey: 'NEYNAR_FROG_FM' })
 });
@@ -48,7 +48,7 @@ app.frame("/", (c) => {
       // "https://magic.decentralized-content.com/ipfs/bafkreig6tezfpz2byeeujnmxfdqfopcrn6cjqwesacxz767comiodkvlgi", tender
       // "https://magic.decentralized-content.com/ipfs/bafybeigk3nqaf3rrhsgr4e2pa5xhtz4j22l3bcz6xhkkdepf3mtlgtymli", // elouise
       // "https://drop-page.vercel.app/songcampAlumni.png",
-      "/initial.jpg",
+      "https://frame-with-zora-mint-comment.vercel.app/initial.jpg",
 
     intents: [
       <Button.Transaction target="/mint">Mint</Button.Transaction>,
@@ -71,7 +71,7 @@ app.frame("/mintsuccess", (c) => {
       // "https://drop-page.vercel.app/songcampAlumni.png",
       // "https://drop-page.vercel.app/songcampAlumni.png",
       // "https://drop-page.vercel.app/songcampAlumni.png",
-      "/submitted.jpg",
+      "https://frame-with-zora-mint-comment.vercel.app/submitted.jpg",
 
     intents: [
       <Button.Link href="https://song.camp/collection/0xa7f7368d3f27515844abacd452252a4bcf824317?tokenId=2">
