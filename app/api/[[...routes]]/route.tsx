@@ -96,15 +96,15 @@ app.transaction("/mint", (c) => {
     abi,
     chainId: "eip155:8453",
     functionName: "mintWithRewards",
-    // to: "0xa7f7368d3f27515844abacd452252a4bcf824317", elouise
-    to: "0x014343327550ad974dccd6b3de77611b4fc7967b", //tender
+    to: "0xa7f7368d3f27515844abacd452252a4bcf824317",
+    // to: "0x014343327550ad974dccd6b3de77611b4fc7967b", //tender
     args: [
       "0x04E2516A2c207E84a1839755675dfd8eF6302F0a",
       2,
       1,
       encodedArguments,
       // `0x000000000000000000000000${truncatedAddress}00000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000`,
-      "0xa7f7368d3f27515844abacd452252a4bcf824317",
+      '0xF6019eA4Bfe5A45520940f3A6D98731eD7ae963c',
     ],
     value: parseEther("0.000777", "wei"),
   });
