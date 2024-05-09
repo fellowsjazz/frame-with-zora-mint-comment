@@ -13,7 +13,7 @@ const abi = zora1155;
 const app = new Frog({
   assetsPath: "/",
   basePath: "/api",
-  browserLocation: "https://song.camp/",
+  // browserLocation: "https://song.camp/",
   // Supply a Hub to enable frame verification.
   // hub: neynar({ apiKey: 'NEYNAR_FROG_FM' })
 });

@@ -14,11 +14,9 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     other: frameTags,
   };
-  
 }
 
 export default function Home() {
-  
   return (
     <main className={styles.main}>
       <div className={styles.description}>
